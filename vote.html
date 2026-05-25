@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vote Page</title>
+
+  <style>
+
+    body{
+      font-family:Arial;
+      background:#f4f7fc;
+      text-align:center;
+      padding:40px;
+    }
+
+    h1{
+      color:#333;
+      margin-bottom:30px;
+    }
+
+    .container{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+
+    .candidate{
+      background:white;
+      width:250px;
+      padding:20px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .candidate:hover{
+      transform:translateY(-10px);
+    }
+
+    img{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    h2{
+      margin:15px 0;
+    }
+
+    button{
+      padding:12px 25px;
+      border:none;
+      border-radius:8px;
+      background:linear-gradient(135deg,#f953c6,#b91d73);
+      color:white;
+      cursor:pointer;
+      font-size:16px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Which is Future</h1>
+
+  <div class="container">
+
+    <div class="candidate">
+      <img src="smartcity.webp">
+      <h2>Digital city</h2>
+      <button onclick="vote('Digital City')">
+        Vote
+      </button>
+    </div>
+
+    <div class="candidate">
+      <img src="ecofriendly.jpg">
+      <h2>Nature city</h2>
+      <button onclick="vote('Nature city')">
+        Vote
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+
+    function vote(name){
+
+      alert("You voted for " + name);
+
+      localStorage.setItem("vote", name);
+
+      window.location.href = "result.html";
+
+    }
+
+  </script>
+
+</body>
+</html>

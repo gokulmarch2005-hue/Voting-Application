@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voting Result</title>
+
+  <style>
+
+    body{
+      font-family:Arial;
+      background:#eef2f7;
+      text-align:center;
+      padding-top:100px;
+    }
+
+    .box{
+      background:white;
+      width:350px;
+      margin:auto;
+      padding:40px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h1{
+      color:#333;
+      margin-bottom:20px;
+    }
+
+    p{
+      font-size:22px;
+      color:#555;
+    }
+
+    button{
+      margin-top:25px;
+      padding:12px 25px;
+      border:none;
+      background:#4facfe;
+      color:white;
+      border-radius:8px;
+      cursor:pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>Voting Result</h1>
+
+    <p id="result"></p>
+
+    <button onclick="goHome()">
+      Back Home
+    </button>
+
+  </div>
+
+  <script>
+
+    let vote = localStorage.getItem("vote");
+
+    document.getElementById("result").innerHTML =
+      "You voted for <b>" + vote + "</b>";
+
+    function goHome(){
+
+      window.location.href = "home.html";
+
+    }
+
+  </script>
+
+</body>
+</html>
